@@ -5,29 +5,43 @@
 </head>
 <body>
 <button class="Flip">Flip</button>
-<p id = "Replace"></p>
+<p id = "FlippingText">Not Flipping</p>
+<p id = "Results"> Results will be printed here:</p>
 <script type="text/javascript">
 	const FlipBtn = document.querySelector(".Flip");
 	FlipBtn.addEventListener('click', () => {
 		let Flip = FlipCoin();
 	})
+	
 	let flips = [];
 	function FlipCoin()
 	{
 		let int = Math.floor(Math.random() * 3);
 		console.log(int);
+		document.getElementById("FlippingText").innerHTML = "Flipping...";
+		//technically we could just set the Results here, but adding more messages like 1 and 3 down the line is supported by the function
 		switch(int)
 		{
 			case 0:
-
+			SendText("Tails");
 			break;
 			case 1:
-
+			SendText("It fell down the well");
 			break;
 			case 2:
-
+			SendText("Heads");
+			break;
+			case 3:
+			SendText("Woops, it fell in a crack");
 			break;
 		}
+	}
+	function SendText (text)
+	{
+		console.log(text);
+		let newText = `<br> ${text}`
+		+ `, `;
+		document.getElementById("Results").innerHTML += newText;
 	}
 </script>
 </body>
