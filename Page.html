@@ -12,14 +12,14 @@
 	FlipBtn.addEventListener('click', () => {
 		let Flip = FlipCoin();
 	})
-	
+
 	let flips = [];
 	function FlipCoin()
 	{
 		let int = Math.floor(Math.random() * 3);
 		console.log(int);
 		document.getElementById("FlippingText").innerHTML = "Flipping...";
-		//technically we could just set the Results here, but adding more messages like 1 and 3 down the line is supported by the function
+		//technically we could just set the Results here, but adding more messages like 1 and 3 down the line can be supported by a function
 		switch(int)
 		{
 			case 0:
