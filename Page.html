@@ -14,9 +14,9 @@
 	})
 
 	let flips = [];
-	function FlipCoin()
+	async function FlipCoin()
 	{
-		let int = Math.floor(Math.random() * 3);
+		let int = await Math.floor(Math.random() * 3);
 		console.log(int);
 		document.getElementById("FlippingText").innerHTML = "Flipping...";
 		//technically we could just set the Results here, but adding more messages like 1 and 3 down the line can be supported by a function
@@ -41,6 +41,7 @@
 		console.log(text);
 		let newText = `<br> ${text}`
 		+ `, `;
+		document.getElementById("FlippingText").innerHTML = "Not Flipping";
 		document.getElementById("Results").innerHTML += newText;
 	}
 </script>
